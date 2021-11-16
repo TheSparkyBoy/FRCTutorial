@@ -24,17 +24,12 @@ public class DriveTrain extends SubsystemBase {
   /** Creates a new DriveTrain. */
   public DriveTrain(){}
 
-  public void setRightMotorSpeed(double speed) {
-    topRightMotor.set(ControlMode.PercentOutput, speed);
-    bottomRightMotor.set(ControlMode.PercentOutput, speed);
-  }
+  public void setSpeed(double lSpeed, rSpeed) {
+    topLeftMotor.set(ControlMode.PercentOutput, lSpeed);
+    bottomLeftMotor.set(ControlMode.PercentOutput, lSpeed);
 
-  public void setLeftMotorSpeed(double speed){
-    topLeftMotor.set(ControlMode.PercentOutput, speed);
-    bottomLeftMotor.set(ControlMode.PercentOutput, speed);
-  }
-  {
-    
+    topRightMotor.set(ControlMode.PercentOutput, rSpeed);
+    bottomRightMotor.set(ControlMode.PercentOutput, rSpeed);
   }
 
 
