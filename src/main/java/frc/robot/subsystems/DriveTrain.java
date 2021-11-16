@@ -25,8 +25,8 @@ public class DriveTrain extends SubsystemBase {
   public DriveTrain(){}
 
   public void setSpeed(double lSpeed, rSpeed) {
-    topLeftMotor.set(ControlMode.PercentOutput, lSpeed);
-    bottomLeftMotor.set(ControlMode.PercentOutput, lSpeed);
+    topLeftMotor.setInverted(ControlMode.PercentOutput, lSpeed);
+    bottomLeftMotor.setInverted(ControlMode.PercentOutput, lSpeed);
 
     topRightMotor.set(ControlMode.PercentOutput, rSpeed);
     bottomRightMotor.set(ControlMode.PercentOutput, rSpeed);
