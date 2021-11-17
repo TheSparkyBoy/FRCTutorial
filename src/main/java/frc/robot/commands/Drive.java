@@ -24,8 +24,8 @@ public class Drive extends CommandBase {
   @Override
   public void execute() {
     // get joystick info
-    leftStick = Math.pow(Robot.oi.xbox0.getRawAxis(L_AXIS), 3);
-    rightStick = Math.pow(Robot.oi.xbox0.getRawAxis(R_AXIS), 3);
+    double leftStick = Math.pow(Robot.oi.xbox0.getRawAxis(L_AXIS), 3);
+    double rightStick = Math.pow(Robot.oi.xbox0.getRawAxis(R_AXIS), 3);
 
     setSpeed(leftStick, rightStick);
   }
