@@ -15,18 +15,18 @@ import com.ctre.phoenix.motorcontrol.TalonFXControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonFX;
 
 public class DriveTrain extends SubsystemBase {
-  private Constants consts = new Constants();
-  public static TalonFX topLeftMotor = new TalonFX(consts.topLeftMotorID);
-  public static TalonFX bottomLeftMotor = new TalonFX(consts.bottomLeftMotorID);
-  public static TalonFX topRightMotor = new TalonFX(consts.topRightMotorID);
-  public static TalonFX bottomRightMotor = new TalonFX(consts.bottomRightMotorID);
+  
+  public static TalonFX topLeftMotor = new TalonFX(Constants.topLeftMotorID);
+  public static TalonFX bottomLeftMotor = new TalonFX(Constants.bottomLeftMotorID);
+  public static TalonFX topRightMotor = new TalonFX(Constants.topRightMotorID);
+  public static TalonFX bottomRightMotor = new TalonFX(Constants.bottomRightMotorID);
 
   /** Creates a new DriveTrain. */
   public DriveTrain(){}
 
-  public void setSpeed(double lSpeed, rSpeed) {
-    topLeftMotor.setInverted(ControlMode.PercentOutput, lSpeed);
-    bottomLeftMotor.setInverted(ControlMode.PercentOutput, lSpeed);
+  public void setSpeed(double lSpeed, double rSpeed) {
+    topLeftMotor.set(ControlMode.PercentOutput, lSpeed);
+    bottomLeftMotor.set(ControlMode.PercentOutput, lSpeed);
 
     topRightMotor.set(ControlMode.PercentOutput, rSpeed);
     bottomRightMotor.set(ControlMode.PercentOutput, rSpeed);

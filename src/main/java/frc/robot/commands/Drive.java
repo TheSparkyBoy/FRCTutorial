@@ -6,7 +6,6 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveTrain;
-import frc.robot.Constants;
 import frc.robot.Robot;
 
 public class Drive extends CommandBase {
@@ -25,16 +24,16 @@ public class Drive extends CommandBase {
   @Override
   public void execute() {
     // get joystick info
-    double leftStick = Math.pow(Robot.oi.xbox0.getRawAxis(L_AXIS), 3);
-    double rightStick = Math.pow(Robot.oi.xbox0.getRawAxis(R_AXIS), 3);
+    double leftStick = Math.pow(Robot.oi.xbox0.getRawAxis(Robot.oi.L_AXIS), 3);
+    double rightStick = Math.pow(Robot.oi.xbox0.getRawAxis(Robot.oi.R_AXIS), 3);
 
-    setSpeed(leftStick, rightStick);
+    driveTrain.setSpeed(-leftStick, rightStick);
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-    setSpeed(0.0, 0.0);
+    driveTrain.setSpeed(0.0, 0.0);
   }
 
   // Returns true when the command should end.
