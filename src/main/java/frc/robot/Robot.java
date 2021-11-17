@@ -17,7 +17,6 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
 
 public class Robot extends TimedRobot {
   Drive drive = new Drive();
-  int x = 3;
 
   private Command m_autonomousCommand;
 
