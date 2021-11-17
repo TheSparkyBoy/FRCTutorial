@@ -6,6 +6,7 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.Constants;
 
 public class Drive extends CommandBase {
   public static DriveTrain driveTrain = new DriveTrain();
@@ -22,12 +23,18 @@ public class Drive extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+    // get joystick info
+    leftStick = Math.pow(Robot.oi.xbox0.getRawAxis(L_AXIS), 3);
+    rightStick = Math.pow(Robot.oi.xbox0.getRawAxis(R_AXIS), 3);
 
+    setSpeed(leftStick, rightStick);
   }
 
   // Called once the command ends or is interrupted.
   @Override
-  public void end(boolean interrupted) {}
+  public void end(boolean interrupted) {
+    setSpeed(0.0, 0.0);
+  }
 
   // Returns true when the command should end.
   @Override
