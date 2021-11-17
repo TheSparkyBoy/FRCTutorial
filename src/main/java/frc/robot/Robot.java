@@ -14,12 +14,16 @@ import edu.wpi.first.wpilibj2.command.CommandScheduler;
  * the package after creating this project, you must also update the build.gradle file in the
  * project.
  */
-Drive drive = new Drive();
 
 public class Robot extends TimedRobot {
+  Drive drive = new Drive();
+  int x = 3;
+
   private Command m_autonomousCommand;
 
   private RobotContainer m_robotContainer;
+
+  public RobotContainer oi;
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -29,7 +33,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
-    oi = new RobotContainer();
+     oi = new RobotContainer();
   }
 
   /**
